@@ -34,7 +34,7 @@ const CoinDetailedScreen = () => {
 
   const screenWidth = Dimensions.get("window").width;
 
-  const formatCurrency = (value) => {
+   const formatCurrency = (value) => {
     "worklet";
     if (value === "") {
       return `$${current_price.usd.toFixed(2)}`;
@@ -43,6 +43,7 @@ const CoinDetailedScreen = () => {
   };
 
   const changeCoinValue = (value) => {
+  
     setCoinValue(value);
     const floatValue = parseFloat(value.replace(",", ".")) || 0;
     setUsdValue((floatValue * current_price.usd).toString());
