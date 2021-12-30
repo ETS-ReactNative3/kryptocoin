@@ -1,10 +1,11 @@
 import React from "react";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
+
 import HomeScreen from "../screens/HomeScreen";
 import CoinDetailedScreen from "../screens/CoinDetailedScreen";
 import BottomTabNavigator from "./botomTabNavigator";
-
-const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
