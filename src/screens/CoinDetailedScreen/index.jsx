@@ -26,9 +26,10 @@ const CoinDetailedScreen = () => {
   const [coin, setCoin] = useState(null);
   const [coinMarketData, setCoinMarketData] = useState(null);
   const route = useRoute();
-  const {params: { coinId }} = route;
-  
-  
+  const {
+    params: { coinId },
+  } = route;
+
   const [loading, setLoading] = useState(false);
   const [coinValue, setCoinValue] = useState("1");
   const [usdValue, setUsdValue] = useState("");
@@ -39,9 +40,9 @@ const CoinDetailedScreen = () => {
     const fetchedCoinMarketData = await getCoinMarketChart(coinId);
     setCoin(fetchedCoinData);
     setCoinMarketData(fetchedCoinMarketData);
-    setUsdValue(fetchedCoinData.market_data.current_price.usd.toString())
+    setUsdValue(fetchedCoinData.market_data.current_price.usd.toString());
     setLoading(false);
-  }
+  };
 
   useEffect(() => {
     fetchCoinData(coinId);
@@ -64,7 +65,6 @@ const CoinDetailedScreen = () => {
   } = coin;
 
   const { prices } = coinMarketData;
-
 
   const percentageColor =
     price_change_percentage_24h < 0 ? "#ea3943" : "#16c784";
@@ -91,8 +91,6 @@ const CoinDetailedScreen = () => {
     setCoinValue((floatValue / current_price.usd).toString());
   };
 
-   
-
   return (
     <View style={{ paddingHorizontal: 10 }}>
       <ChartPathProvider
@@ -102,6 +100,7 @@ const CoinDetailedScreen = () => {
         }}
       >
         <CoinDetailedHeader
+          coinId={id}
           image={small}
           symbol={symbol}
           marketCapRank={market_cap_rank}

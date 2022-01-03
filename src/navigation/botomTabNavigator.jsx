@@ -9,6 +9,8 @@ import HomeScreen from "../screens/HomeScreen/index";
 import { Entypo, FontAwesome } from "@expo/vector-icons";
 
 const BottomTabNavigator = () => {
+   
+
   return (
     <Tab.Navigator
       initialRouteName="Home"

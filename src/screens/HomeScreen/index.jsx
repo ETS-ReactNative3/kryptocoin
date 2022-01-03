@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, {   useEffect, useState } from "react";
 import { FlatList, ActivityIndicator, RefreshControl } from "react-native";
 import CoinItem from "../../components/CoinItem";
-
+ 
 import { getMarketData } from "../../services/request";
 
 const HomeScreen = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
 
+ 
   const fetchCoins = async (pageNumber) => {
     if (loading) return;
 
