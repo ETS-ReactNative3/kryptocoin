@@ -34,13 +34,15 @@ export const getMarketData = async (pageNumber = 1) => {
 };
 
 export const getWatchListedCoins = async (pageNumber = 1, coinIds) => {
-  try {
-    const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`
-    );
+  if (coinIds) {
+    try {
+      const { data } = await axios.get(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`
+      );
 
-    return response.data;
-  } catch (error) {
-    throw new Error({ message: error });
+      return data;
+    } catch (error) {
+      throw new Error({ message: error });
+    }
   }
 };

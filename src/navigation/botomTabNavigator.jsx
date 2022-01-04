@@ -5,12 +5,11 @@ const Tab = createBottomTabNavigator();
 
 import { WatchListScreen } from "../screens/watchListScreen/index";
 import HomeScreen from "../screens/HomeScreen/index";
+import PortfolioScreen from "../screens/PortfolioScreen"
 
-import { Entypo, FontAwesome } from "@expo/vector-icons";
+import { Entypo, FontAwesome, Foundation } from "@expo/vector-icons";
 
 const BottomTabNavigator = () => {
-   
-
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -29,6 +28,20 @@ const BottomTabNavigator = () => {
         options={{
           tabBarIcon: ({ focused, color }) => (
             <Entypo name="home" size={focused ? 30 : 25} color={color} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name={"Portfolio"}
+        component={PortfolioScreen }
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <Foundation
+              name="graph-pie"
+              size={focused ? 35 : 30}
+              color={color}
+            />
           ),
         }}
       />

@@ -7,36 +7,38 @@ import { getWatchListedCoins } from "../../services/request";
 export const WatchListScreen = () => {
   const { watchlistCoinIds } = useWatchlist();
   const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(false);
+
   const transformCoinIds = () => watchlistCoinIds.join("%2C");
 
-  const fetchWatchListedCoins = async () => {
-    if (loading) return;
-
+  const fetchWatchlistedCoins = async () => {
+    if (loading) {
+      return;
+    }
     setLoading(true);
-    const watchListedCoinsData = await getWatchListedCoins(
+    const watchlistedCoinsData = await getWatchListedCoins(
       1,
       transformCoinIds()
     );
-    setCoins(watchListedCoinsData);
+    console.log(transformCoinIds())
+
+    setCoins(watchlistedCoinsData);
     setLoading(false);
   };
 
-  useEffect(() => fetchWatchListedCoins(), []);
-
   useEffect(() => {
-    fetchWatchListedCoins();
+    fetchWatchlistedCoins();
   }, [watchlistCoinIds]);
 
   return (
     <FlatList
       data={coins}
       renderItem={({ item }) => <CoinItem marketCoin={item} />}
-      RefreshControl={
+      refreshControl={
         <RefreshControl
           refreshing={loading}
-          tintColor={"white"}
-          onRefresh={fetchWatchListedCoins}
+          tintColor="white"
+          onRefresh={fetchWatchlistedCoins}
         />
       }
     />

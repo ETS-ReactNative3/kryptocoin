@@ -33,7 +33,7 @@ const CoinItem = ({ marketCoin }) => {
   };
 
   const percentageColor =
-    price_change_percentage_24h < 0 ? "#ea3943" : "#16c784";
+    price_change_percentage_24h < 0 ? "#ea3943" : "#16c784" || "#fff";
 
   return (
     <Pressable
@@ -63,7 +63,7 @@ const CoinItem = ({ marketCoin }) => {
             color={percentageColor}
           />
           <Text style={{ color: percentageColor }}>
-            {price_change_percentage_24h.toFixed(2)}%
+            {price_change_percentage_24h?.toFixed(2)}%
           </Text>
         </View>
       </View>
