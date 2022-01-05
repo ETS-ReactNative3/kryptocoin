@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
   },
   coinCointainer: {
     flexDirection: "row",
-    padding: 15
+    padding: 15,
   },
 
-  quantityContainer:{
-    marginLeft:"auto",
-    alignItems:"flex-end"
-  }
+  quantityContainer: {
+    marginLeft: "auto",
+    alignItems: "flex-end",
+  },
 });
 
 export default styles;

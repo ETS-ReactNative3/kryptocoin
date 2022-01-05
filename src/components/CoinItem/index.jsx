@@ -21,14 +21,14 @@ const CoinItem = ({ marketCoin }) => {
   const normalizeMarketCap = (marketCap) => {
     //change this later on to if and else conditions
 
-    return marketCap > Math.pow(10, 12)
-      ? `${Math.floor(marketCap / Math.pow(10, 12))} T`
-      : marketCap > Math.pow(10, 9)
-      ? `${Math.floor(marketCap / Math.pow(10, 9))} B`
-      : marketCap > Math.pow(10, 6)
-      ? `${Math.floor(marketCap / Math.pow(10, 6))} M`
-      : marketCap > Math.pow(10, 3)
-      ? `${Math.floor(marketCap / Math.pow(10, 3))} K`
+    return marketCap > 1e12
+      ? `${Math.floor(marketCap / 1e12)} T`
+      : marketCap > 1e9
+      ? `${Math.floor(marketCap / 1e9)} B`
+      : marketCap > 1e6
+      ? `${Math.floor(marketCap / 1e6)} M`
+      : marketCap > 1e3
+      ? `${Math.floor(marketCap / 1e3)} K`
       : marketCap;
   };
 
