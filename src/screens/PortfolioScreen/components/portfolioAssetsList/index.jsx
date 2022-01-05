@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles";
+import { PortfolioAssetItem } from "../PortfolioAssetItem";
 
 const PortfolioAssetsList = () => {
   return (
@@ -9,7 +10,7 @@ const PortfolioAssetsList = () => {
       <FlatList
         data={[1]}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={() => <Text></Text>}
+        renderItem={({ item }) => <PortfolioAssetItem assetItem={item} />}
         ListHeaderComponent={
           <>
             <View style={styles.balanceContainer}>

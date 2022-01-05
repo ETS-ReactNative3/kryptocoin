@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   currentBalanceValue: {
     color: "#fff",
     fontSize: 40,
-    fontWeight: "700",
+    fontWeight: "600",
     letterSpacing: 1,
   },
   valueChange: {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   assetsLabel: {
     color: "#fff",
     fontSize: 23,
-    fontWeight: "700",
+    fontWeight: "600",
     paddingVertical: 10,
     paddingHorizontal: 10,
   },
