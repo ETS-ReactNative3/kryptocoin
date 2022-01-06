@@ -5,13 +5,17 @@ import styles from "./styles";
 
 import { PortfolioAssetItem } from "../PortfolioAssetItem";
 import { useNavigation } from "@react-navigation/native";
+import { useRecoilValue } from "recoil";
+import { allPortfolioAssets } from "../../../../atoms/portfolioAssets";
 
 const PortfolioAssetsList = () => {
   const navigation = useNavigation();
+  const assets = useRecoilValue(allPortfolioAssets);
+
   return (
     <View>
       <FlatList
-        data={[1]}
+        data={[assets]}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => <PortfolioAssetItem assetItem={item} />}
         ListHeaderComponent={

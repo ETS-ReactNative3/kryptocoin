@@ -4,8 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Navigation from "./src/navigation";
 import WatchListProvider from "./src/contexts/WatchListContext";
+import { RecoilRoot } from "recoil";
+import { LogBox } from "react-native";
 
 export default function App() {
+  LogBox.ignoreLogs(["Setting a timer"]);
   return (
     <NavigationContainer
       theme={{
@@ -14,13 +17,14 @@ export default function App() {
         },
       }}
     >
-      <WatchListProvider>
-        <View style={styles.container}>
-          <Navigation />
-          <StatusBar style="light" />
-        </View>
-      </WatchListProvider>
-      
+      <RecoilRoot>
+        <WatchListProvider>
+          <View style={styles.container}>
+            <Navigation />
+            <StatusBar style="light" />
+          </View>
+        </WatchListProvider>
+      </RecoilRoot>
     </NavigationContainer>
   );
 }
