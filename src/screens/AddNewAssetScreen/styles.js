@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonContainer: {
-    backgroundColor: "#4169E1",
     padding: 10,
     alignItems: "center",
     marginVertical: 25,
@@ -35,16 +34,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonText: {
-    color: "#fff",
     fontSize: 17,
     fontWeight: "500",
   },
-  pricePerCoin:{
-    color:"grey",
-    fontWeight:"700",
-    fontSize:17,
-    letterSpacing:0.5
-  }
+  pricePerCoin: {
+    color: "grey",
+    fontWeight: "700",
+    fontSize: 17,
+    letterSpacing: 0.5,
+  },
 });
 
 export default styles;
