@@ -21,6 +21,7 @@ import {
   ChartPathProvider,
   ChartYLabel,
 } from "@rainbow-me/animated-charts";
+import { FilterComponent } from "./components/FilterComponent";
 
 const CoinDetailedScreen = () => {
   const [coin, setCoin] = useState(null);
@@ -33,19 +34,28 @@ const CoinDetailedScreen = () => {
   const [loading, setLoading] = useState(false);
   const [coinValue, setCoinValue] = useState("1");
   const [usdValue, setUsdValue] = useState("");
+  const [selectedRange, setSelectedRange] = useState("1");
 
   const fetchCoinData = async () => {
     setLoading(true);
     const fetchedCoinData = await getDetailedCoinData(coinId);
-    const fetchedCoinMarketData = await getCoinMarketChart(coinId);
+
     setCoin(fetchedCoinData);
-    setCoinMarketData(fetchedCoinMarketData);
     setUsdValue(fetchedCoinData.market_data.current_price.usd.toString());
     setLoading(false);
   };
 
+  const fetchMarketCoinData = async (selectedRangeValue) => {
+    const fetchedCoinMarketData = await getCoinMarketChart(
+      coinId,
+      selectedRangeValue
+    );
+    setCoinMarketData(fetchedCoinMarketData);
+  };
+
   useEffect(() => {
     fetchCoinData(coinId);
+    fetchMarketCoinData(1);
   }, []);
 
   if (loading || !coin || !coinMarketData) {
@@ -80,7 +90,7 @@ const CoinDetailedScreen = () => {
       return `$${current_price.usd.toFixed(2)}`;
     }
     if (current_price.usd < 1) {
-      return `$${parseFloat(value )}`;
+      return `$${parseFloat(value)}`;
     }
     return `$${parseFloat(value).toFixed(2)}`;
   };
@@ -97,12 +107,17 @@ const CoinDetailedScreen = () => {
     setCoinValue((floatValue / current_price.usd).toString());
   };
 
+  const onSelectedRangeChange = (selectedRangeValue) => {
+    setSelectedRange(selectedRangeValue);
+
+    fetchMarketCoinData(selectedRangeValue);
+  };
+
   return (
     <View style={{ paddingHorizontal: 10 }}>
       <ChartPathProvider
         data={{
           points: prices.map(([x, y]) => ({ x, y })),
-          smoothingStrategy: "bezier",
         }}
       >
         <CoinDetailedHeader
@@ -136,6 +151,40 @@ const CoinDetailedScreen = () => {
             </Text>
           </View>
         </View>
+
+        <View style={styles.filtersContainer}>
+          <FilterComponent
+            filterDay="1"
+            filterText="24h"
+            selectedRange={selectedRange}
+            setSelectedRange={onSelectedRangeChange}
+          />
+          <FilterComponent
+            filterDay="7"
+            filterText="7d"
+            selectedRange={selectedRange}
+            setSelectedRange={onSelectedRangeChange}
+          />
+          <FilterComponent
+            filterDay="30"
+            filterText="30d"
+            selectedRange={selectedRange}
+            setSelectedRange={onSelectedRangeChange}
+          />
+          <FilterComponent
+            filterDay="365"
+            filterText="1y"
+            selectedRange={selectedRange}
+            setSelectedRange={onSelectedRangeChange}
+          />
+          <FilterComponent
+            filterDay="max"
+            filterText="All"
+            selectedRange={selectedRange}
+            setSelectedRange={onSelectedRangeChange}
+          />
+        </View>
+
         <View>
           <ChartPath
             strokeWidth={2}

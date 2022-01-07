@@ -22,8 +22,6 @@ const CoinDetailedHeader = (props) => {
     return storeWatchlistCoinId(coinId);
   };
 
-  console.log(watchlistCoinIds)
-
   return (
     <View style={styles.headerContainer}>
       <Ionicons
