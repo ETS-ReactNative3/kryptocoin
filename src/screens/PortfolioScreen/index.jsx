@@ -7,7 +7,17 @@ const PortfolioScreen = () => {
   return (
     <View>
       <Suspense
-        fallback={<Text style={{ color: "#fff" }}>Loading...Wait a sec</Text>}
+        fallback={
+          <Text
+            style={{
+              color: "#fff",
+              opacity: 0.9,
+              textAlign: "center",
+            }}
+          >
+            Loading...Wait a sec
+          </Text>
+        }
       >
         <PortfolioAssetsList />
       </Suspense>

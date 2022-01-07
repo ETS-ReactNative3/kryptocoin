@@ -12,10 +12,45 @@ const PortfolioAssetsList = () => {
   const navigation = useNavigation();
   const assets = useRecoilValue(allPortfolioAssets);
 
+  const getCurrentBalance = () =>
+    assets
+      .reduce(
+        (total, currentAsset) =>
+          total + currentAsset.currentPrice * currentAsset.quantityBought,
+        0
+      )
+      .toFixed(2);
+
+  const getCurrentValueChange = () => {
+    const currentBalance = getCurrentBalance();
+    const boughtBalanceSpended = assets.reduce(
+      (total, currentAsset) =>
+        total + currentAsset.priceBought * currentAsset.quantityBought,
+      0
+    );
+    return (currentBalance - boughtBalanceSpended).toFixed(2);
+  };
+
+  const getCurrentPercentageChange = () => {
+    const currentBalance = getCurrentBalance();
+    const boughtBalanceSpended = assets.reduce(
+      (total, currentAsset) =>
+        total + currentAsset.priceBought * currentAsset.quantityBought,
+      0
+    );
+
+    return (
+      (
+        ((currentBalance - boughtBalanceSpended) / boughtBalanceSpended) *
+        100
+      ).toFixed(3) || 0
+    );
+  };
+
   return (
     <View>
       <FlatList
-        data={[assets]}
+        data={assets}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => <PortfolioAssetItem assetItem={item} />}
         ListHeaderComponent={
@@ -23,18 +58,35 @@ const PortfolioAssetsList = () => {
             <View style={styles.balanceContainer}>
               <View>
                 <Text style={styles.currentBalance}>Current Balance</Text>
-                <Text style={styles.currentBalanceValue}>$320.000</Text>
-                <Text style={styles.valueChange}>$1200(All Time)</Text>
+                <Text style={styles.currentBalanceValue}>
+                  ${getCurrentBalance()}
+                </Text>
+                <Text
+                  style={{
+                    ...styles.valueChange,
+                    color: getCurrentValueChange() >= 0 ? "#16c784" : "#ea3943",
+                  }}
+                >
+                  ${getCurrentValueChange()}(All Time)
+                </Text>
               </View>
 
-              <View style={styles.priceChangePercentageContainer}>
+              <View
+                style={{
+                  ...styles.priceChangePercentageContainer,
+                  backgroundColor:
+                    getCurrentValueChange() >= 0 ? "#16c784" : "#ea3943",
+                }}
+              >
                 <AntDesign
-                  name={"caretup"}
+                  name={getCurrentValueChange() >= 0 ? "caretup" : "caretdown"}
                   size={12}
                   style={{ alignSelf: "center", marginRight: 10 }}
                   color={"white"}
                 />
-                <Text style={styles.percentageChange}>2.3%</Text>
+                <Text style={styles.percentageChange}>
+                  {getCurrentPercentageChange()}%
+                </Text>
               </View>
             </View>
 

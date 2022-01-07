@@ -28,7 +28,7 @@ export const allPortfolioBoughtAssetsFromAPI = selector({
       return {
         ...boughtAsset,
         currentPrice: portfolioAsset.current_price,
-        priceChangePercentage: portfolioAsset.price_change_percentage_24,
+        priceChangePercentage: portfolioAsset.price_change_percentage_24h ,
       };
     });
 

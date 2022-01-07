@@ -16,12 +16,11 @@ const styles = StyleSheet.create({
   },
   currentBalanceValue: {
     color: "#fff",
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "600",
     letterSpacing: 1,
   },
   valueChange: {
-    color: "#16c784",
     fontWeight: "600",
     fontSize: 15,
   },
@@ -32,7 +31,6 @@ const styles = StyleSheet.create({
   },
   priceChangePercentageContainer: {
     flexDirection: "row",
-    backgroundColor: "#16c784",
     borderRadius: 5,
     paddingHorizontal: 3,
     paddingVertical: 8,

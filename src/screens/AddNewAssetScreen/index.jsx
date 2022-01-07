@@ -5,6 +5,8 @@ import SearchableDropdown from "react-native-searchable-dropdown";
 import { useRecoilState } from "recoil";
 import { allPortfolioBoughtAssetsInStorage } from "../../atoms/portfolioAssets";
 import { getAllCoins, getDetailedCoinData } from "../../services/request";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 const AddNewAssetScreen = () => {
   const [allCoins, setAllCoins] = useState([]);
@@ -12,13 +14,10 @@ const AddNewAssetScreen = () => {
   const [selectedCoinId, setSelectedCoinId] = useState(null);
   const [boughtAssetQuantity, setBoughtAssetQuantity] = useState("");
   const [selectedCoin, setSelectedCoin] = useState(null);
+  const navigation = useNavigation();
   const [assetsInStorage, setAssetsInStorage] = useRecoilState(
     allPortfolioBoughtAssetsInStorage
   );
-
-  console.log(selectedCoin);
-
-  const onAddNewAsset = () => {};
 
   const fetchAllCoins = async () => {
     if (loading) return;
@@ -48,6 +47,26 @@ const AddNewAssetScreen = () => {
     }
   }, [selectedCoinId]);
 
+  const USD_VALUE = selectedCoin?.market_data.current_price.usd;
+
+  const onAddNewAsset = async () => {
+    const newAsset = {
+      id: selectedCoin.id,
+      name: selectedCoin.name,
+      image: selectedCoin.image.small,
+      ticker: selectedCoin.symbol.toUpperCase(),
+      quantityBought: parseFloat(boughtAssetQuantity),
+      priceBought: USD_VALUE,
+    };
+
+    const newAssets = [...assetsInStorage, newAsset];
+    const jsonValue = JSON.stringify(newAssets);
+
+    await AsyncStorage.setItem("@portfolio_coins", jsonValue);
+    setAssetsInStorage(newAssets);
+    navigation.goBack();
+  };
+
   return (
     <View style={{ flex: 1 }}>
       <SearchableDropdown
@@ -71,7 +90,7 @@ const AddNewAssetScreen = () => {
         }}
       />
 
-      {selectedCoinId ? (
+      {selectedCoin ? (
         <>
           <View style={styles.boughtQuantityContainer}>
             <View style={{ flexDirection: "row" }}>
@@ -82,9 +101,11 @@ const AddNewAssetScreen = () => {
                 placeholder="0"
                 keyboardType="numeric"
               />
-              <Text style={styles.ticker}>BTC</Text>
+              <Text style={styles.ticker}>
+                {selectedCoin?.symbol.toUpperCase()}
+              </Text>
             </View>
-            <Text style={styles.pricePerCoin}>$4000 per coin</Text>
+            <Text style={styles.pricePerCoin}>${USD_VALUE} per coin</Text>
           </View>
 
           <Pressable
