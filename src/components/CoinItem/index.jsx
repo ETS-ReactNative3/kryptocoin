@@ -22,13 +22,13 @@ const CoinItem = ({ marketCoin }) => {
     //change this later on to if and else conditions
 
     return marketCap > 1e12
-      ? `${Math.floor(marketCap / 1e12)} T`
+      ? `${(marketCap / 1e12).toFixed(3)} T`
       : marketCap > 1e9
-      ? `${Math.floor(marketCap / 1e9)} B`
+      ? `${(marketCap / 1e9).toFixed(3)} B`
       : marketCap > 1e6
-      ? `${Math.floor(marketCap / 1e6)} M`
+      ? `${(marketCap / 1e6).toFixed(3)} M`
       : marketCap > 1e3
-      ? `${Math.floor(marketCap / 1e3)} K`
+      ? `${(marketCap / 1e3).toFixed(3)} K`
       : marketCap;
   };
 

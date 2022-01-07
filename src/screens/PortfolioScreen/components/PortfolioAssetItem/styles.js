@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   coinCointainer: {
     flexDirection: "row",
     padding: 15,
+
   },
 
   quantityContainer: {

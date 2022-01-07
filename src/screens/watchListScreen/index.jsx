@@ -20,20 +20,21 @@ export const WatchListScreen = () => {
       1,
       transformCoinIds()
     );
-    console.log(transformCoinIds())
+    console.log(transformCoinIds());
 
     setCoins(watchlistedCoinsData);
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchWatchlistedCoins();
+    if (watchlistCoinIds.length) fetchWatchlistedCoins();
   }, [watchlistCoinIds]);
 
   return (
     <FlatList
       data={coins}
       renderItem={({ item }) => <CoinItem marketCoin={item} />}
+      keyExtractor={(item,index)=>String(index)}
       refreshControl={
         <RefreshControl
           refreshing={loading}
