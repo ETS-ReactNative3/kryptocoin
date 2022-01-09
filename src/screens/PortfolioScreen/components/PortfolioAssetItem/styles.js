@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
-    alignSelf:"flex-end"
+    alignSelf: "flex-end",
   },
   ticker: {
     color: "grey",
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   coinCointainer: {
     flexDirection: "row",
     padding: 15,
-
+    backgroundColor: "#121212",
   },
 
   quantityContainer: {

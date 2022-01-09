@@ -23,6 +23,14 @@ import {
 } from "@rainbow-me/animated-charts";
 import { FilterComponent } from "./components/FilterComponent";
 
+const filterDaysArray = [
+  { filterDay: "1", filterText: "24h" },
+  { filterDay: "7", filterText: "7d" },
+  { filterDay: "30", filterText: "30d" },
+  { filterDay: "365", filterText: "1y" },
+  { filterDay: "max", filterText: "All" },
+];
+
 const CoinDetailedScreen = () => {
   const [coin, setCoin] = useState(null);
   const [coinMarketData, setCoinMarketData] = useState(null);
@@ -153,36 +161,15 @@ const CoinDetailedScreen = () => {
         </View>
 
         <View style={styles.filtersContainer}>
-          <FilterComponent
-            filterDay="1"
-            filterText="24h"
-            selectedRange={selectedRange}
-            setSelectedRange={onSelectedRangeChange}
-          />
-          <FilterComponent
-            filterDay="7"
-            filterText="7d"
-            selectedRange={selectedRange}
-            setSelectedRange={onSelectedRangeChange}
-          />
-          <FilterComponent
-            filterDay="30"
-            filterText="30d"
-            selectedRange={selectedRange}
-            setSelectedRange={onSelectedRangeChange}
-          />
-          <FilterComponent
-            filterDay="365"
-            filterText="1y"
-            selectedRange={selectedRange}
-            setSelectedRange={onSelectedRangeChange}
-          />
-          <FilterComponent
-            filterDay="max"
-            filterText="All"
-            selectedRange={selectedRange}
-            setSelectedRange={onSelectedRangeChange}
-          />
+          {filterDaysArray.map(({ filterDay, filterText }) => (
+            <FilterComponent
+              filterDay={filterDay}
+              filterText={filterText}
+              selectedRange={selectedRange}
+              setSelectedRange={onSelectedRangeChange}
+              key={filterText}
+            />
+          ))}
         </View>
 
         <View>
