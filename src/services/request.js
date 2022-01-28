@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//fixed:
 export const getDetailedCoinData = async (coinId) => {
   try {
     const { data } = await axios.get(

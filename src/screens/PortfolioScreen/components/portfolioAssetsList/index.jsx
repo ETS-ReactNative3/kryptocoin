@@ -13,7 +13,7 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import { SwipeListView } from "react-native-swipe-list-view";
 import AsyncStorage from "@react-native-async-storage/async-storage";
- 
+
 const PortfolioAssetsList = () => {
   const navigation = useNavigation();
   const assets = useRecoilValue(allPortfolioAssets);
@@ -37,11 +37,14 @@ const PortfolioAssetsList = () => {
         total + currentAsset.priceBought * currentAsset.quantityBought,
       0
     );
+
     return (currentBalance - boughtBalanceSpended).toFixed(2);
   };
 
   const getCurrentPercentageChange = () => {
     const currentBalance = getCurrentBalance();
+    if (currentBalance < 1) return `0%`;
+
     const boughtBalanceSpended = assets.reduce(
       (total, currentAsset) =>
         total + currentAsset.priceBought * currentAsset.quantityBought,
@@ -124,7 +127,7 @@ const PortfolioAssetsList = () => {
                 color={"white"}
               />
               <Text style={styles.percentageChange}>
-                {getCurrentPercentageChange()}%
+                {getCurrentPercentageChange() || 0}
               </Text>
             </View>
           </View>

@@ -3,6 +3,7 @@ node_modules/
 dist/
 npm-debug.*
 *.jks
+resume.MD
 *.p8
 *.p12
 *.key
