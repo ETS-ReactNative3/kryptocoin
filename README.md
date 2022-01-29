@@ -23,6 +23,7 @@ To have access to the data on this screen without having to pass it as props, `C
   Everything that is rendered in this provider is called "childreen", then we ensure that `WatchListProvider` is "parent" of all components thus rendering all childreen, which in this case is the entire application. That way we can use the "provider data" that was defined in the value of the WatchListContext without having to pass as props from the top to the lowest level component. As said, the `WatchListContext.Provider` needs to be a parent of the entire application, so in the `App.js component` and we ensure that all other components, with the exception of the navigationContainer, are "children" of the WatchListContext. To access the data in any component, the `useWatchList Hook was created`, which simplifies some steps, imports, etc. That way, just call `useWatchList()` which will have access to the data.
 
 </p>
+
 ## Getting started
 
 1. Clone this repo using `git@github.com:eulazzo/kryptcoin_app.git`
