@@ -26,8 +26,8 @@ To have access to the data on this screen without having to pass it as props, `C
 
 ## Getting started
 
-1. Clone this repo using `git@github.com:eulazzo/kryptcoin_app.git`
-2. Move yourself to the appropriate directory: `cd kryptcoin_app`<br />
+1. Clone this repo using `git@github.com:eulazzo/kryptocoin.git`
+2. Move yourself to the appropriate directory: `cd kryptcoin`<br />
 3. Run `npm install` to install dependencies<br />
 4- Run `yarn run dev` to start up the app  
 
