@@ -1,6 +1,28 @@
 <h1 align="center">
-   <img alt="sigma" src="github/logo.svg" width="250px" />
+   <img alt="kryptocoin" src="github/logo.svg" width="250px" />
 </h1>
+  
+<div align="center">
+  <h1>Astromatch - Is about cryptocurrency prices, very similar to the application available on the market coinMakertCap</h1>
+</div>
+
+<p align="center" >
+  <a href="#-sobre-a-aplica%C3%A7%C3%A3o"> Sobre </a> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-conteúdos-aplicados"> Conteúdos aplicados</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-suporte"> Suporte </a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licen%C3%A7a">Licença</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/eulazzo" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=author&message=eulazzo&color=fafafa&labelColor=222" alt="Github"> 
+  </a>
+    <img src="https://img.shields.io/github/stars/eulazzo/kryptocoin?color=fafafa&labelColor=222" alt="Stars">
+  <img src="https://img.shields.io/github/last-commit/eulazzo/kryptocoin?color=fafafa&labelColor=222" alt="Commits">
+  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=fafafa&labelColor=222" alt="License">
+</p>
+
 
 <h1 align="center">
    <img alt="cryptocoin" src="github/crypto.gif" width="250px" />
