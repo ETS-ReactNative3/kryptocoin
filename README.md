@@ -14,13 +14,22 @@
 
 <p>
 
-  Kryptocoin tell us about cryptocurrency prices, very similar to the application available on the market "coinMakertCap", The API used was Coin Gecko. On the home are shown several cryptocurrencies and their respective details such as name, price, market value, etc. By clicking on any of them, you are directed to more specific details of that currency, in addition to the name and value, we also have an animated and minimalistic chart (rainbow-me/react-native-animated-charts library) showing price variations in 24h, 7d intervals , 30d and 1 year.
-
-  On the portfolio screen, the user is able to track their cryptocurrencies that have been "bought" and how they are performing, check balance, add and delete new assets. Concepts like Navigation, Fetching data with Axios, Bottom Navigation Menu, Context API, Recoil, React Memo and Async Storage were implemented.
-
-  On the WatchList screen the user can favorite desired cryptocurrencies.
-To have access to the data on this screen without having to pass it as props, `ContextAPI` was used. Roughly speaking, the Context API provides a way to pass data from components without having to manually pass through every level. That being said,  The WatchListProvider function returns the created context, which was named as WatchListContext, with `<WatchListContext.Provider value={}/>`. 
-  Everything that is rendered in this provider is called "childreen", then we ensure that `WatchListProvider` is "parent" of all components thus rendering all childreen, which in this case is the entire application. That way we can use the "provider data" that was defined in the value of the WatchListContext without having to pass as props from the top to the lowest level component. As said, the `WatchListContext.Provider` needs to be a parent of the entire application, so in the `App.js component` and we ensure that all other components, with the exception of the navigationContainer, are "children" of the WatchListContext. To access the data in any component, the `useWatchList Hook was created`, which simplifies some steps, imports, etc. That way, just call `useWatchList()` which will have access to the data.
+  Kryptocoin tell us about cryptocurrency prices, very similar to the application available on the market `coinMakertCap`, The API used was Coin Gecko. On the home are shown several cryptocurrencies and their respective details such as name, price, market value, etc. By clicking on any of them, you are directed to more specific details of that currency, in addition to the name and value, we also have an animated and minimalistic chart (rainbow-me/react-native-animated-charts library) showing price variations in 24h, 7d intervals , 30d and 1 year.
+</p>
+   
+## Portfolio Screen
+<p>
+On the portfolio screen, the user is able to track their cryptocurrencies that have been "bought" and how they are performing, check balance,</br> <code>add and delete new assets</code>. Concepts like  <code>Navigation</code> ,<code>Fetching data with Axios</code>, <code>Bottom Navigation Menu</code> ,<code>Context API</code>  ,<code>Recoil</code>   , <code>React Memo</code>and <code>Async Storage</code> were implemented.
+</p>
+   
+## WatchList Screen
+<p>
+On the WatchList screen the user can favorite desired cryptocurrencies.
+To have access to the data on this screen without having to pass it as props,<code>ContextAPI</code> was used. Roughly speaking, the Context API provides a way to pass data from components without having to manually pass through every level. That being said,  The WatchListProvider function returns the created context, which was named as WatchListContext, with   <code><WatchListContext.Provider value={}/></code>. 
+  Everything that is rendered in this provider is called childreen, then we ensure that <code> WatchListProvider</code>   is parent of all components thus rendering all childreen, which in this case is the entire application. That way we can use the "provider data" that was defined in the value of the WatchListContext without having to pass as props from the top to the lowest level component. As said, the <code> WatchListContext.Provider</code> needs to be a parent of the entire application, so in the <code>App.js component</code>  and we ensure that all other components, with the exception of the navigationContainer, are "children" of the WatchListContext. To access the data in any component, the <code>AuseWatchList Hook was created</code>  , which simplifies some steps, imports, etc. That way, just call  <code>useWatchList()</code>  which will have access to the data.
+<p/>
+   
+   
 
 </p>
 
@@ -28,7 +37,7 @@ To have access to the data on this screen without having to pass it as props, `C
 
 1. Clone this repo using `git@github.com:eulazzo/kryptocoin.git`
 2. Move yourself to the appropriate directory: `cd kryptcoin`<br />
-3. Run `npm install` to install dependencies<br />
+3. Run `npm install` to install dependencies<br/>
 4- Run `yarn run dev` to start up the app  
 
  
