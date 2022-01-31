@@ -3,7 +3,7 @@
 </h1>
   
 <div align="center">
-  <h1>Astromatch - Is about cryptocurrency prices and some others features</h1>
+  <h1>kryptocoin - Is about cryptocurrency prices and some others features</h1>
 </div>
 
 <p align="center" >
