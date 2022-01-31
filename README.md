@@ -3,7 +3,7 @@
 </h1>
   
 <div align="center">
-  <h1>Astromatch - Is about cryptocurrency prices, very similar to the application available on the market coinMakertCap</h1>
+  <h1>Astromatch - Is about cryptocurrency prices and some others features</h1>
 </div>
 
 <p align="center" >
