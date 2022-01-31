@@ -1,5 +1,5 @@
 <h1 align="center">
-   <img alt="kryptocoin" src="github/logo.svg" width="250px" />
+   <img alt="kryptocoin" src="github/logo.svg" width="250px"  />
 </h1>
   
 <div align="center">
@@ -16,11 +16,11 @@
 
 <p align="center">
   <a href="https://github.com/eulazzo" target="_blank">
-    <img src="https://img.shields.io/static/v1?label=author&message=eulazzo&color=fafafa&labelColor=222" alt="Github"> 
+    <img src="https://img.shields.io/static/v1?label=author&message=eulazzo&color=000&labelColor=16c784" alt="Github"> 
   </a>
-    <img src="https://img.shields.io/github/stars/eulazzo/kryptocoin?color=fafafa&labelColor=222" alt="Stars">
-  <img src="https://img.shields.io/github/last-commit/eulazzo/kryptocoin?color=fafafa&labelColor=222" alt="Commits">
-  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=fafafa&labelColor=222" alt="License">
+    <img src="https://img.shields.io/github/stars/eulazzo/kryptocoin?color=000&labelColor=16c784" alt="Stars">
+  <img src="https://img.shields.io/github/last-commit/eulazzo/kryptocoin?color=000&labelColor=16c784" alt="Commits">
+  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=000&labelColor=16c784" alt="License">
 </p>
 
 
