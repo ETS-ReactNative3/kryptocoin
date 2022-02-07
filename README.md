@@ -28,10 +28,17 @@
    <img alt="cryptocoin" src="github/crypto.gif" width="250px" />
 </h1>
 
-# Kryptocoin
 
-<p>Crypto Price Tracker App Developed with <code>React Native</code>, <code>Recoil</code>,<code>ContextAPI</code>,</br><code>Axios</code>, <code>Coin Gecko API</code></p>  
+# About the project
 
+### Kryptocoin
+<p>Developed with <code>React Native</code>, <code>Axios</code>,<code>Context Api</code>,</br><code>Recoil</code>, <code>React Memo</code> <code>Async Storage</code>  and  <code>Coin Gecko API</code></p></p> 
+
+#### Features:
+- See several cryptocurrencies and their respective details such as name, price, market value, etc
+-By clicking on any of them, you are directed to more specific details of that currency, in addition to the name and value, we also have an animated and minimalistic chart
+- track their cryptocurrencies that have been "bought" and how they are performing, check balance,</br> <code>add and delete new assets</code>.
+ 
 ## About the project and how it works
 
 <p>
