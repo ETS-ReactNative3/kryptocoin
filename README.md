@@ -90,6 +90,21 @@ To have access to the data on this screen without having to pass it as props,<co
 | :----------------------------------------| :-------    | :----------------------------------------------------|
 | `coinId` = `bitcoin`,`solana` and so on  | `string`    | **Required**. coinId to fetch the coin details data  |
 
+#### Get Watch Listed Coins
+
+<p>Get data of all whatch listed coin on the Watch List screen {name, id, currentPrice, image, marketcap and so on}</ṕ>
+
+
+```js
+   const { data } = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`
+    );
+```
+ 
+| Parameter                                | Type        | Description                                          |
+| :----------------------------------------| :-------    | :----------------------------------------------------|
+| `[coinId]` = `bitcoin`,`solana` and so on  | `string`    | **Required**. coinId to fetch the coin market chart data       |
+
 
 
 #### Get Coin Market Chart
