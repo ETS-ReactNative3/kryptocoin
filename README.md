@@ -32,7 +32,7 @@
 # About the project
 
 ### Kryptocoin
-<p>Developed with <code>React Native</code>, <code>Axios</code>,<code>Context Api</code>,</br><code>Recoil</code>, <code>React Memo</code> <code>Async Storage</code>  and  <code>Coin Gecko API</code></p></p> 
+<p>Developed with <code>React Native</code>,<code>Expo</code>, <code>Axios</code>,<code>Context Api</code>,</br><code>Recoil</code>, <code>React Memo</code> <code>Async Storage</code>  and  <code>Coin Gecko API</code></p></p> 
 
 ### Features:
 - [X] See several cryptocurrencies and their respective details such as name, price, market value, etc
