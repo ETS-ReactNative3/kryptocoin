@@ -60,6 +60,34 @@ To have access to the data on this screen without having to pass it as props,<co
   
 </p>
 
+
+## Coin Gecko API Reference
+
+#### You can check it out the Coin Gecko docs <a href="https://www.coingecko.com/en/api/documentation">Here</a> for more info.
+
+#### Get all Coins
+
+```js
+  const { data } = await axios.get(`https://api.coingecko.com/api/v3/coins/list?include_platform=false`)
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `link`    | `string` | **Required**. the api link |
+
+#### Get Detailed Coin Data
+
+```js
+   const { data } = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`
+    );
+```
+
+| Parameter                                | Type        | Description                                          |
+| :----------------------------------------| :-------    | :----------------------------------------------------|
+| `coinId` = `bitcoin`,`solana` and so on  | `string`    | **Required**. coinId to fetch the coin details data  |
+
+
 ## Getting started
 
 1. Clone this repo using `git@github.com:eulazzo/kryptocoin.git`
