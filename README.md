@@ -61,7 +61,7 @@ To have access to the data on this screen without having to pass it as props,<co
 </p>
 
 
-## Coin Gecko API Reference
+## Coin Gecko API Reference to this project
 
 #### You can check it out the Coin Gecko docs <a href="https://www.coingecko.com/en/api/documentation">Here</a> for more info.
 
@@ -77,15 +77,35 @@ To have access to the data on this screen without having to pass it as props,<co
 
 #### Get Detailed Coin Data
 
+<p>Get current data { name,price,market,...including exchange tickers) for a coin. So when a coin is clicked we fetch the details about that coin using this </ṕ>
+
+
 ```js
    const { data } = await axios.get(
       `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`
     );
 ```
-
+ 
 | Parameter                                | Type        | Description                                          |
 | :----------------------------------------| :-------    | :----------------------------------------------------|
 | `coinId` = `bitcoin`,`solana` and so on  | `string`    | **Required**. coinId to fetch the coin details data  |
+
+
+
+#### Get Coin Market Chart
+
+<p>Get historical data (name,price,market,stats) at a given date for a coin</ṕ>
+
+
+```js
+   const { data } = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${selectedRange}&interval=hourly`
+    );
+```
+ 
+| Parameter                                | Type        | Description                                          |
+| :----------------------------------------| :-------    | :----------------------------------------------------|
+| `coinId` = `bitcoin`,`solana` and so on  | `string`    | **Required**. coinId to fetch the coin market chart data       |
 
 
 ## Getting started
