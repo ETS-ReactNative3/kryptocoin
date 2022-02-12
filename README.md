@@ -3,7 +3,7 @@
 </h1>
   
 <div align="center">
-  <h1>kryptocoin - Is about cryptocurrency prices and some others features</h1>
+  <h1>kryptocoin - Cryptocurrency prices and some others features</h1>
 </div>
 
 <p align="center" >
@@ -43,7 +43,7 @@
 
 <p>
 
-  Kryptocoin tell us about cryptocurrency prices, very similar to the application available on the market `coinMakertCap`, The API used was Coin Gecko. On the home are shown several cryptocurrencies and their respective details such as name, price, market value, etc. By clicking on any of them, you are directed to more specific details of that currency, in addition to the name and value, we also have an animated and minimalistic chart (rainbow-me/react-native-animated-charts library) showing price variations in 24h, 7d intervals , 30d and 1 year.
+  Kryptocoin tell us about cryptocurrency prices, very similar to the application available on the market `coinMakertCap`, The API used was Coin Gecko. On the home are shown several cryptocurrencies and their respective details such as name, price, market value, etc. By clicking on any of them, you are directed to more specific details of that currency, in addition to the name and value, we also have an animated and minimalistic chart (rainbow-me/react-native-animated-charts library) showing price variations in 24h, 7d , 30d and 1 year intervals.
 </p>
    
 ### Portfolio Screen
@@ -54,8 +54,8 @@ On the portfolio screen, the user is able to track their cryptocurrencies that h
 ### WatchList Screen
 <p>
 On the WatchList screen the user can favorite desired cryptocurrencies.
-To have access to the data on this screen without having to pass it as props,<code>ContextAPI</code> was used. Roughly speaking, the Context API provides a way to pass data from components without having to manually pass through every level. That being said,  The WatchListProvider function returns the created context, which was named as WatchListContext, something like WatchListContext.Provider.
-  Everything that is rendered in this provider is called childreen, then we ensure that <code>WatchListProvider</code>  is parent of all components thus rendering all childreen, which in this case is the entire application. That way we can use the "provider data" that was defined in the value of the WatchListContext without having to pass as props from the top to the lowest level component. As said, the <code> WatchListContext.Provider</code> needs to be a parent of the entire application, so in the <code>App.js component</code>  and we ensure that all other components, with the exception of the navigationContainer, are children of the WatchListContext. To access the data in any component, the <code>AuseWatchList Hook was created</code>  , which simplifies some steps, imports, etc. That way, just call  <code>useWatchList()</code>  which will have access to the data.
+To have access to the data on this screen without having to pass it as props,<code>ContextAPI</code> was used. Roughly speaking, the Context API provides a way to pass data from components without having to manually pass through every level (avoiding what is known as prop drilling). That being said,  The WatchListProvider function returns the created context, which was named as WatchListContext, something like WatchListContext.Provider.
+  Everything that is rendered in this provider is called childreen, then we ensure that <code>WatchListProvider</code>  is parent of all components thus rendering all childreen, which in this case is the entire application. That way we can use the "provider data" that was defined in the value of the WatchListContext without having to pass as props from the top to the lowest level component. As said, the <code> WatchListContext.Provider</code> needs to be a parent of the entire application, so in the <code>App.js component</code> we ensure that all other components, with the exception of the navigationContainer, are children of the WatchListContext. To access the data in any component, the <code>useWatchList Hook was created</code>  , which simplifies some steps, imports, etc. That way, just call  <code>useWatchList()</code>  which will have access to the data.
 <p/>
   
 </p>
